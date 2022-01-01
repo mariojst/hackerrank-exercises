@@ -1,0 +1,11 @@
+-- MYSQL Solution
+SELECT DISTINCT parents.N as n,
+       CASE
+            WHEN parents.P is null then 'Root'
+            WHEN sons.N is null then 'Leaf'
+        ELSE 'Inner'
+       END as node
+  FROM BST sons
+ RIGHT JOIN BST parents
+    ON sons.P=parents.N
+ ORDER BY 1;
