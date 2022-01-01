@@ -1,4 +1,4 @@
-package exercises.algorithms.sorting;
+package exercises.algorithms.sorting.part.one;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 
-class InsertionSortPart1 {
+class Solution {
 
     /*
      * Complete the 'insertionSort1' function below.
@@ -20,9 +20,9 @@ class InsertionSortPart1 {
 
     public static void insertionSort1(int n, List<Integer> arr) {
         // 2 4 6 8 3
-        Integer size = arr.size();
+        int size = arr.size();
         Integer lastValue = arr.get(size - 1);
-        int i = -1;
+        int i;
         for (i = arr.size() - 2; i >= 0 && arr.get(i) > lastValue; i--) {
             updateArray(arr, i + 1, arr.get(i));
         }
@@ -51,7 +51,7 @@ class InsertionSortPart1 {
                 .map(Integer::parseInt)
                 .collect(toList());
 
-        InsertionSortPart1.insertionSort1(n, arr);
+        Solution.insertionSort1(n, arr);
 
         bufferedReader.close();
     }
